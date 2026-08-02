@@ -1,0 +1,23 @@
+<div class="status-effects-app flexcol">
+    <div class="sea-header-buttons-body flex0">
+        <div class="sea-open-macros-button"><span>{{localize "status-effects.openMacros"}}</span></div>
+        <div class="sea-bottom-buttons flexrow">
+            <div class="sea-create-button"><span>{{localize "status-effects.createEffect"}}</span></div>
+            <div class="sea-clear-button"><span>{{localize "status-effects.clearEffects"}}</span></div>
+        </div>
+    </div>
+    <ol class="sea-effects-list">
+        {{#each effects}}
+        <li class="sea-effect-item" data-effect-id="{{id}}">
+            <div class="sea-effect-icon"><img src="{{img}}"></div>
+            <div class="sea-effect-name"><span>{{name}} - </span></div>
+            <div class="sea-effect-stacks"><input type="text" value="{{stacks}}"></div>
+            <div class="sea-effect-buttons">
+                <div class="sea-effect-macro" data-tooltip="{{localize 'status-effects.macroTooltip'}}"><i class="fas fa-pencil"></i></div>
+                <div class="sea-effect-delete" data-tooltip="{{localize 'status-effects.deleteTooltip'}}"><i class="fas fa-times"></i></div>
+            </div>
+        </li>
+        {{/each}}
+    </ol>
+    <div class="sea-apply-button flex0"><span>{{localize "status-effects.applyChanges"}}</span></div>
+</div>

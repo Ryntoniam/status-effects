@@ -1,0 +1,11 @@
+{
+    "status-effects": {
+        "createEffect": "Создать эффект",
+        "clearEffects": "Очистить эффекты",
+        "openMacros": "Открыть папку макросов эффектов",
+        "title": "Эффекты",
+        "macroTooltip": "Открыть макрос",
+        "deleteTooltip": "Убрать эффект",
+        "applyChanges": "Применить изменения"
+    }
+}

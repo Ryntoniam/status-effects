@@ -1,0 +1,86 @@
+.sea-apply-button, .sea-header-buttons-body {
+  margin: 5px;
+  border: 2px solid dimgray;
+  border-radius: 10px;
+  box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.4588235294);
+  background-color: rgba(0, 0, 0, 0.0784313725);
+}
+
+.sea-apply-button, .sea-create-button,
+.sea-clear-button,
+.sea-open-macros-button {
+  padding: 6px;
+  align-items: center;
+  justify-items: center;
+  display: grid !important;
+}
+.sea-apply-button:hover, .sea-create-button:hover,
+.sea-clear-button:hover,
+.sea-open-macros-button:hover {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0 7px 2px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+  border-color: #3a3a3a;
+}
+
+.sea-apply-button span, .sea-create-button span,
+.sea-clear-button span,
+.sea-open-macros-button span {
+  font-weight: 500;
+  font-size: larger;
+  font-family: "Signika";
+}
+
+.sea-header-buttons-body {
+  padding: 0px;
+}
+
+.sea-open-macros-button {
+  border-bottom: 2px solid dimgray;
+}
+
+.sea-clear-button {
+  border-left: 1px solid dimgray;
+}
+
+.sea-create-buttons-body {
+  border-right: 1px solid dimgray;
+}
+
+.sea-effect-item {
+  border-radius: 5px;
+  border: 2px solid #781506;
+  height: 39px;
+  align-items: center;
+  overflow: hidden;
+  margin: 5px 0px;
+}
+
+.sea-effect-icon {
+  height: 35px;
+  min-width: 35px;
+}
+.sea-effect-icon img {
+  border: none;
+  border-radius: 0;
+}
+
+.sea-effect-name {
+  padding: 5px;
+  border-left: 2px solid #420b03;
+  height: 100%;
+}
+.sea-effect-name span {
+  font-family: "GWENT";
+  font-size: 15px;
+}
+
+.sea-effect-buttons {
+  padding: 3px;
+}
+
+.sea-effect-macro:hover,
+.sea-effect-delete:hover {
+  cursor: pointer;
+  color: #252525;
+}/*# sourceMappingURL=module.css.map */
