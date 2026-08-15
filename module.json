@@ -18,7 +18,8 @@
     "scripts/settings.js",
     "scripts/effects.js",
     "scripts/coins.js",
-    "scripts/NoHdHealingForDampirs.js"
+    "scripts/NoHdHealingForDampirs.js",
+    "scripts/TimeDuck.js"
   ],
   "styles": [
     "styles/module.css"
