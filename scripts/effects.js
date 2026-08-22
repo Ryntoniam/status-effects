@@ -140,7 +140,15 @@ Hooks.on("midi-qol.AttackRollComplete", async (workflow) => {
     const burned = workflow.actor.appliedEffects.find(eff => eff.name === 'Инстинкт саморазрушения')
     if (!burned || (workflow.item.system.type.value !== ("simpleM"||"martialM"))) return
     
-    const target = workflow.hitTargets.first()
+    let targets = []
+    workflow.hitTargets.forEach(t => {
+        if (!targets.some(tar => tar.tokenId === t.id)) {
+            targets.push({
+                tokenId: t.id,
+                token: t,
+            })
+        }
+    })
     let effectStacks = 1
     if (workflow.actor.system.attributes.hp.value < workflow.actor.system.attributes.hp.max/2) effectStacks = 3
     const effectData = (effectName, effectStacks) => { return {
@@ -164,14 +172,15 @@ Hooks.on("midi-qol.AttackRollComplete", async (workflow) => {
         'changes': []
     }}
     const effName = 'Темное пламя'
-    const effect = target.actor.appliedEffects.find(eff => /Темное пламя - [0-9]+$/.test(eff.name))
-    if (!effect) {
-        await createEffect(target.actor, effectData(effName, effectStacks));
-    } else {
-        effectStacks += parseInt(effect.name.split(" - ")[1])
-        await updateEffect(effect, updates(`Темное пламя`, effectStacks));
-        new Sequence()
-            .scrollingText(target, `Темное пламя - ${effectStacks}`)   
-            .play() 
-    }
+    for (let target of targets) {
+        const effect = target.token.actor.appliedEffects.find(eff => /Темное пламя - [0-9]+$/.test(eff.name))
+        if (!effect) {
+            await createEffect(target.token.actor, effectData(effName, effectStacks));
+        } else {
+            effectStacks += parseInt(effect.name.split(" - ")[1])
+            await updateEffect(effect, updates(`Темное пламя`, effectStacks));
+            new Sequence()
+                .scrollingText(target.token, `Темное пламя - ${effectStacks}`)   
+                .play() 
+        }}
 })
